@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false)
+    const {createUser}=useContext(AuthContext)
 
     const handleRegister=e=>{
         e.preventDefault()
@@ -13,6 +15,15 @@ const SignUp = () => {
           const password=e.target.password.value;
           const user={name,photo,email,password}
           console.log(user)
+          
+         createUser(email,password)
+         .then(result =>{
+            console.log(result)
+
+         })
+         .catch(error =>{
+            console.log(error)
+         })
     }
     return (
         <div>

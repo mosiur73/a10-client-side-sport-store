@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Login from '../Login/Login';
+import { AuthContext } from '../Provider/AuthProvider';
+import { FaUserTie } from 'react-icons/fa';
+
 
 const Navbar = () => {
+  const {user,signOutUser}=useContext(AuthContext)
+
+  const handleSignOut=()=>{
+    signOutUser()
+    .then(()=>{
+      console.log('sign out successfully ');
+      
+    })
+    .catch(()=>console.log(error.message))
+  }
     return (
         <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -48,8 +61,16 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    {/* <a className="btn">Button</a> */}
-    <Link to="/login"><button className='btn '>Login</button></Link>
+  {
+                user?
+               <div className='flex gap-3 items-center'>
+                
+                 <div title={user?.name} className='text-3xl'><FaUserTie /></div>
+                 <button onClick={handleSignOut} className='btn btn-accent rounded-none'>Logout</button>
+               </div>
+                :
+              <Link to="/login" className='btn bg-orange-500 rounded-none'>Login</Link>
+              }
   </div>
 </div>
     );
