@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaGoogle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const haneleSignIn=e=>{
@@ -36,6 +38,9 @@ const Login = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
+        <div className="divider divider-accent">Or</div>
+            <button  className='btn btn-outline'><FaGoogle /> Login with google</button>
+            <p>New user have an account <Link className='underline' to="/register">Register</Link></p>
       </form>
     </div>
   </div>
