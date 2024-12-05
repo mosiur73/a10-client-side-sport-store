@@ -5,6 +5,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false)
+    const [errorMessage, setErrorMessage] = useState('')
     const {createUser}=useContext(AuthContext)
 
     const handleRegister=e=>{
@@ -15,6 +16,18 @@ const SignUp = () => {
           const password=e.target.password.value;
           const user={name,photo,email,password}
           console.log(user)
+          setErrorMessage('')
+
+          if (password.length < 6) {
+            setErrorMessage('Password should be 6 characters or longer');
+            return;
+        }
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+        if (!passwordRegex.test(password)) {
+            setErrorMessage('At least one uppercase, one lowercase, one number, one special character');
+            return;
+        }
           
          createUser(email,password)
          .then(result =>{
@@ -61,6 +74,9 @@ const SignUp = () => {
               showPassword ? <FaEyeSlash /> : <FaRegEye />
             }
           </button>
+          {
+                errorMessage && <p className='text-red-600'>{errorMessage}</p>
+            }
                 <label className="label">
                
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
