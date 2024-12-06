@@ -6,6 +6,7 @@ const AuthProvider = ({children}) => {
     const [user,setUser]=useState(null)
     const googleProvider=new GoogleAuthProvider()
     const [loading,setLoading]=useState(true)
+    const [theme, setTheme] = useState('light');
     
 
 
@@ -37,6 +38,22 @@ const AuthProvider = ({children}) => {
         }
     },[])
 
+     // Check localStorage for theme preference on mount
+     useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
+        document.documentElement.setAttribute('data-theme', savedTheme); 
+    }, []);
+
+      // Toggle between dark and light themes
+      const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme); // Save preference to localStorage
+    };
+
+
 
     const authInfo={
         user,
@@ -44,7 +61,9 @@ const AuthProvider = ({children}) => {
         singInuser,
         googleLogin,
         signOutUser,
-        loading
+        loading,
+        toggleTheme,
+        theme
 
     }
     return (

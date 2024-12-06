@@ -3,10 +3,12 @@ import { Link, NavLink } from 'react-router-dom';
 import Login from '../Login/Login';
 import { AuthContext } from '../Provider/AuthProvider';
 import { FaUserTie } from 'react-icons/fa';
+import { Tooltip } from 'react-tooltip';
 
 
 const Navbar = () => {
-  const {user,signOutUser}=useContext(AuthContext)
+  const {user,signOutUser,theme,toggleTheme}=useContext(AuthContext)
+
 
   const handleSignOut=()=>{
     signOutUser()
@@ -17,7 +19,7 @@ const Navbar = () => {
     .catch(()=>console.log(error.message))
   }
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 dark:bg-slate-800">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -47,7 +49,7 @@ const Navbar = () => {
     </a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 mx-3">
       <li><NavLink to="/">Home</NavLink></li>
       <li><NavLink to="/addequipment">Add Equipment</NavLink></li>
       <li><NavLink to="/allequipment">All Equipment</NavLink></li>
@@ -56,15 +58,22 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+ <div className='navbar'>
+ <button onClick={toggleTheme} className="theme-toggle-btn mr-4">
+                {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
+            </button>
+ </div>
   {
                 user?
                <div className='flex gap-3 items-center'>
                 
-                 <div title={user?.name} className='text-3xl'><FaUserTie /></div>
+                 <div data-tooltip-id="my-tooltip" data-tooltip-content={user?.email}  className='text-3xl'><FaUserTie /></div>
+                 <Tooltip id="my-tooltip" />
+               
                  <button onClick={handleSignOut} className='btn btn-accent rounded-none'>Logout</button>
                </div>
                 :
-              <Link to="/login" className='btn bg-orange-500 rounded-none'>Login</Link>
+              <Link to="/login" className='btn bg-orange-500 rounded-2xl'>Login</Link>
               }
   </div>
 </div>

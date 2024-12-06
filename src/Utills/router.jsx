@@ -8,6 +8,7 @@ import AddEquipment from "../component/AddEquipment/AddEquipment";
 import AllEquipment from "../component/AllEquipment/AllEquipment";
 import UpdateEuipment from "../component/UpdateEquipment/UpdateEuipment";
 import PrivateRoute from "../component/PrivateRoute/PrivateRoute";
+import MyEquipment from "../component/MyEquipment/MyEquipment";
 
 
 const router=createBrowserRouter([
@@ -41,6 +42,10 @@ const router=createBrowserRouter([
                 path:"/update/:id",
                 element:<PrivateRoute><UpdateEuipment></UpdateEuipment></PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/sports/${params.id}`)
+            },
+            {
+                path:"/myequipment",
+                element:<MyEquipment></MyEquipment>
             }
         ]
         

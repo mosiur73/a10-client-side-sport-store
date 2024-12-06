@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import EquipmentCard from './EquipmentCard';
 import Swal from 'sweetalert2';
 
 const AllEquipment = () => {
     const loadSports =useLoaderData()
     const [sports,setSports]=useState(loadSports)
+    const [sortOrder, setSortOrder] = useState('asc'); // Default sort order
+
+
     const handleDelete=id=>{
         console.log(id)
         Swal.fire({
@@ -39,9 +41,28 @@ const AllEquipment = () => {
             }
           });
     }   
+
+    const handleSort = () => {
+      const sortedSports = [...sports].sort((a, b) => {
+          if (sortOrder === 'asc') {
+              return a.Price - b.Price;
+          } else {
+              return b.Price - a.Price;
+          }
+      });
+      setSports(sortedSports);
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc'); // Toggle sort order
+  };
+
     
     return (
         <div>
+          <div className="mb-4">
+                <button onClick={handleSort} className="btn btn-primary">
+                    Sort by Price ({sortOrder === 'asc' ? 'Ascending' : 'Descending'})
+                </button>
+            </div>
+
             <div>
             <div className="overflow-x-auto">
   <table className="table">
@@ -58,8 +79,8 @@ const AllEquipment = () => {
     <tbody>
       {/* row 1 */}
       {
-        sports.map(sport => <tr key={sport._id}>
-            <th>1</th>
+        sports.map((sport,index) => <tr key={sport._id}>
+            <th>{index + 1}</th>
             <td>{sport.name}</td>
             <td>{sport.categoryName}</td>
             <td>{sport.Price}</td>

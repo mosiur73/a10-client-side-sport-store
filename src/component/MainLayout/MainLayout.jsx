@@ -5,9 +5,12 @@ import Footer from '../Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className='max-w-7xl mx-auto'>
            <Navbar></Navbar>
+           <main style={{ padding: '1rem' }}>
+                
            <Outlet></Outlet>
+            </main>
            <Footer></Footer>
         </div>
     );
