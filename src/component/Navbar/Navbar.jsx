@@ -69,6 +69,7 @@ const Navbar = () => {
                 
                  <div data-tooltip-id="my-tooltip" data-tooltip-content={user?.email}  className='text-3xl'><FaUserTie /></div>
                  <Tooltip id="my-tooltip" />
+                
                
                  <button onClick={handleSignOut} className='btn btn-accent rounded-none'>Logout</button>
                </div>
