@@ -1,9 +1,10 @@
 import React from 'react';
 import { Zoom } from 'react-awesome-reveal';
+import { Link } from 'react-router-dom';
 
 const Product = ({product}) => {
-    console.log(product);
-    const {name,email,itemName,categoryName,Price,description,processing,stock,photo}=product
+    
+    const {name,itemName,categoryName,Price,stock,_id,photo}=product
     
     return (
         <div>
@@ -19,8 +20,9 @@ const Product = ({product}) => {
     <p>itemName:{itemName}</p>
     <p>Category:{categoryName}</p>
     <p>Price:{Price}</p>
+    <p>Stock Status:{stock}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-warning">Details</button>
+      <Link to={`/details/${_id}`}><button className="btn btn-warning">Details</button></Link>
     </div>
   </div>
 </div>

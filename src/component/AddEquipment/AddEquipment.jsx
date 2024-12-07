@@ -56,13 +56,13 @@ const AddEquipment = () => {
                             <label className="label">
                                 <span className="label-text">User Name</span>
                             </label>
-                            <input type="text" name='name'  placeholder="User Name" className="input input-bordered" required />
+                            <input type="text" name='name'defaultValue= {user?.name}  placeholder="User Name" className="input input-bordered" required />
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">
                                 <span className="label-text">User Emai</span>
                             </label>
-                            <input type="text" name='email' placeholder="User Emai" className="input input-bordered" required />
+                            <input type="text" defaultValue={user?.email} name='email' placeholder="User Emai" className="input input-bordered" required />
                         </div>
                     </div>
                     {/* form second row */}
