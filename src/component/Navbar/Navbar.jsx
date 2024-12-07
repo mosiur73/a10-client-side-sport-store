@@ -45,7 +45,7 @@ const Navbar = () => {
       <li><NavLink to="/myequipment">My Equipment</NavLink></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Lotus
+    <a className="btn btn-ghost text-2xl">Lotus
     </a>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -71,10 +71,10 @@ const Navbar = () => {
                  <Tooltip id="my-tooltip" />
                 
                
-                 <button onClick={handleSignOut} className='btn btn-accent rounded-none'>Logout</button>
+                 <button onClick={handleSignOut} className='btn btn-accent rounded-xl'>Logout</button>
                </div>
                 :
-              <Link to="/login" className='btn bg-orange-500 rounded-2xl'>Login</Link>
+              <Link to="/login" className='btn bg-orange-500 rounded-xl'>Login</Link>
               }
   </div>
 </div>
