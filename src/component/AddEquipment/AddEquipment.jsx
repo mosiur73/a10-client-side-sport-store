@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2'
+import { Zoom } from 'react-awesome-reveal';
 
 const AddEquipment = () => {
     const {user}=useContext(AuthContext)
@@ -46,7 +47,8 @@ const AddEquipment = () => {
                 <h1 className="text-5xl font-bold">Add Equipment</h1>
                 
             </div>
-            <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
+           <Zoom>
+           <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
                 <form onSubmit={handleAddEquipment} className="card-body">
                     {/* form first row */}
                     <div className='flex flex-col lg:flex-row gap-3'>
@@ -121,6 +123,7 @@ const AddEquipment = () => {
                     </div>
                 </form>
             </div>
+           </Zoom>
         </div>
         </div>
     );

@@ -79,7 +79,8 @@ const AllEquipment = () => {
     <tbody>
       {/* row 1 */}
       {
-        sports.map((sport,index) => <tr key={sport._id}>
+        sports.map((sport,index) =>
+         <tr key={sport._id}>
             <th>{index + 1}</th>
             <td>{sport.name}</td>
             <td>{sport.categoryName}</td>
