@@ -16,7 +16,9 @@ const Navbar = () => {
       console.log('sign out successfully ');
       
     })
-    .catch(()=>console.log(error.message))
+    .catch(()=>{
+      // console.log(error.message)
+    })
   }
     return (
         <div className="navbar bg-base-100 dark:bg-slate-800">
@@ -54,6 +56,7 @@ const Navbar = () => {
       <li><NavLink to="/addequipment">Add Equipment</NavLink></li>
       <li><NavLink to="/allequipment">All Equipment</NavLink></li>
       <li><NavLink to="/myequipment">My Equipment</NavLink></li>
+      <li><NavLink to="/product">product</NavLink></li>
      
     </ul>
   </div>

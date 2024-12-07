@@ -18,7 +18,7 @@ const AddEquipment = () => {
         const stock = e.target.stock.value;
         const photo = e.target.photo.value;
         const sports={name,email,itemName,categoryName,Price,description,processing,stock,photo};
-        console.log(sports)
+        // console.log(sports)
         //send data to the server
         fetch('http://localhost:5000/sports',{
            method:'POST',
@@ -29,7 +29,7 @@ const AddEquipment = () => {
         })
         .then(res =>res.json())
         .then(data =>{
-            console.log(data)
+           
             if(data.insertedId){
                 Swal.fire({
                     title: 'success!',

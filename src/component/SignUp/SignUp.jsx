@@ -15,7 +15,7 @@ const SignUp = () => {
         const email=e.target.email.value;
           const password=e.target.password.value;
           const user={name,photo,email,password}
-          console.log(user)
+          // console.log(user)
           setErrorMessage('')
 
           if (password.length < 6) {
@@ -35,7 +35,7 @@ const SignUp = () => {
 
          })
          .catch(error =>{
-            console.log(error)
+            // console.log(error)
          })
     }
     return (

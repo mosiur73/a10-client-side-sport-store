@@ -9,7 +9,7 @@ const AllEquipment = () => {
 
 
     const handleDelete=id=>{
-        console.log(id)
+      
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -26,7 +26,7 @@ const AllEquipment = () => {
             })
             .then(res =>res.json())
             .then(data =>{
-                console.log(data)
+                // console.log(data)
                 if(data.deletedCount > 0){
                     Swal.fire({
                 title: "Deleted!",
@@ -74,6 +74,7 @@ const AllEquipment = () => {
         <th>Category</th>
         <th>price</th>
         <th>stock</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>

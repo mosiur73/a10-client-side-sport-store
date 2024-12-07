@@ -12,7 +12,7 @@ const Login = () => {
         const email=e.target.email.value;
           const password=e.target.password.value;
           const user={email,password}
-          console.log(user);
+        
 
           singInuser(email,password)
           .then(result =>{
@@ -20,7 +20,7 @@ const Login = () => {
             
           })
           .catch(error =>{
-            console.log(error.message)
+            // console.log(error.message)
             form.reset('')
           })
     }

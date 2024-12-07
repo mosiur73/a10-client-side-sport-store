@@ -9,6 +9,7 @@ import AllEquipment from "../component/AllEquipment/AllEquipment";
 import UpdateEuipment from "../component/UpdateEquipment/UpdateEuipment";
 import PrivateRoute from "../component/PrivateRoute/PrivateRoute";
 import MyEquipment from "../component/MyEquipment/MyEquipment";
+import ProductSection from "../component/ProductSection/ProductSection";
 
 
 const router=createBrowserRouter([
@@ -46,7 +47,8 @@ const router=createBrowserRouter([
             {
                 path:"/myequipment",
                 element:<MyEquipment></MyEquipment>
-            }
+            },
+           
         ]
         
     }
