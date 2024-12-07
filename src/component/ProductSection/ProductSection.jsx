@@ -28,7 +28,7 @@ const ProductSection = () => {
 
     return (
         <div>
-            <h2>Product Section:</h2>
+          
             {loading && <p>Loading products...</p>}
             {error && <p>Error: {error}</p>}
            

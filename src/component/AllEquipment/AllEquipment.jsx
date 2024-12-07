@@ -88,7 +88,7 @@ const AllEquipment = () => {
             <td>{sport.Price}</td>
             <td>{sport.stock}</td>
             <td>
-                <button className='btn btn-secondary mr-2'>Details</button>
+               <Link to={`/details/${sport._id}`}> <button className='btn btn-secondary mr-2'>Details</button></Link>
                 <Link to={`/update/${sport._id}`}>
                 <button className='btn btn-info mr-2'>Edit</button>
                 </Link>

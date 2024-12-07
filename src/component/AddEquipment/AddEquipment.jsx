@@ -98,9 +98,9 @@ const AddEquipment = () => {
                     <div className='flex flex-col lg:flex-row gap-3'>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text">Processing Time</span>
+                                <span className="label-text">delivery time</span>
                             </label>
-                            <input type="text" name='processing' placeholder="Processing Time" className="input input-bordered" required />
+                            <input type="text" name='processing' placeholder="delivery time" className="input input-bordered" required />
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">

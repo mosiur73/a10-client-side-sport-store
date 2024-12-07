@@ -2,6 +2,13 @@ import React from 'react';
 import { Fade, Flip, Zoom } from 'react-awesome-reveal';
 import { Tooltip } from 'react-tooltip';
 
+
+
+
+
+// import required modules
+
+
 const MyEquipment = () => {
     return (
        <div className='dark:bg-gray-500'>
@@ -30,9 +37,7 @@ const MyEquipment = () => {
            </div>
             </Flip>
         </div>
-        <a data-tooltip-id="my-tooltip" data-tooltip-content="Hello world!">
-        click me
-          </a>
+       
 <Tooltip id="my-tooltip" />
 
        </div>
