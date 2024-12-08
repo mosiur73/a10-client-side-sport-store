@@ -46,7 +46,7 @@ const router=createBrowserRouter([
             },
             {
                 path:"/myequipment",
-                element:<MyEquipment></MyEquipment>,
+                element:<PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
                 loader:()=>fetch('http://localhost:5000/sports')
             },
             {

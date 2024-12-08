@@ -4,6 +4,7 @@ import Login from '../Login/Login';
 import { AuthContext } from '../Provider/AuthProvider';
 import { FaUserTie } from 'react-icons/fa';
 import { Tooltip } from 'react-tooltip';
+import { MdOutlineSportsSoccer } from 'react-icons/md';
 
 
 const Navbar = () => {
@@ -47,7 +48,8 @@ const Navbar = () => {
       <li><NavLink to="/myequipment">My Equipment</NavLink></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-2xl text-teal-950">Sports
+    <MdOutlineSportsSoccer className='text-4xl' />
+    <a className="btn btn-ghost text-2xl font-bold">Sports
     </a>
   </div>
   <div className="navbar-center hidden lg:flex">

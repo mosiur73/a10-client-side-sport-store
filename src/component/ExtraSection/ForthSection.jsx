@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fade, Flip } from 'react-awesome-reveal';
 import { FaArrowRight } from 'react-icons/fa';
 
 const ForthSection = () => {
@@ -8,8 +9,9 @@ const ForthSection = () => {
             <p className='text-gray-600 mb-10'>Explore insights and knowledge in our articles</p>
             <div className='lg:flex gap-6'>
            
-           
-            <div className="card card-side bg-base-100 shadow-xl">
+         <Fade>
+              
+         <div className="card card-side bg-base-100 shadow-xl">
   <figure>
     <img
     className='w-80 h-80'
@@ -24,6 +26,8 @@ const ForthSection = () => {
       <button className='btn'>view more <FaArrowRight /></button>
   </div>
 </div>
+         </Fade>
+<Flip>
 <div className="card card-side bg-base-100 shadow-xl">
   <figure>
     <img
@@ -39,6 +43,7 @@ const ForthSection = () => {
     <button className='btn'>view more <FaArrowRight /></button>
   </div>
 </div>
+</Flip>
 
 
             </div>

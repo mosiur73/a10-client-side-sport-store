@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
     const {createUser}=useContext(AuthContext)
+    const navigate=useNavigate()
 
     const handleRegister=e=>{
         e.preventDefault()
@@ -31,11 +33,14 @@ const SignUp = () => {
           
          createUser(email,password)
          .then(result =>{
-            console.log(result)
+            // console.log(result)
+            toast.success('Registration successful! ');
+            navigate('/');
 
          })
          .catch(error =>{
             // console.log(error)
+            toast.error('Registration failed. Please try again.');
          })
     }
     return (
