@@ -27,9 +27,11 @@ const ProductSection = () => {
     }, []); 
 
     return (
-        <div>
+        <div className='mt-10'>
+            <h2 className='text-3xl text-center mb-3 text-teal-800'>Most popular products</h2>
+            <p className='text-center text-gray-400 mb-7'>Browse through our collection of must-haves</p>
           
-            {loading && <p>Loading products...</p>}
+            {loading && <span className="loading loading-infinity loading-lg "></span>}
             {error && <p>Error: {error}</p>}
            
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>

@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 const AllEquipment = () => {
     const loadSports =useLoaderData()
     const [sports,setSports]=useState(loadSports)
-    const [sortOrder, setSortOrder] = useState('asc'); // Default sort order
+    const [sortOrder, setSortOrder] = useState('asc'); 
 
 
     const handleDelete=id=>{

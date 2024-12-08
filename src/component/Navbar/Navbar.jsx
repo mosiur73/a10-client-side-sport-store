@@ -47,7 +47,7 @@ const Navbar = () => {
       <li><NavLink to="/myequipment">My Equipment</NavLink></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-2xl">Lotus
+    <a className="btn btn-ghost text-2xl text-teal-950">Sports
     </a>
   </div>
   <div className="navbar-center hidden lg:flex">

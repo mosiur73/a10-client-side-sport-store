@@ -1,8 +1,8 @@
 import React from 'react';
 
-const EquipmentCard = ({sport}) => {
+const EquipmentCard = () => {
     
-    const {name,email,itemName,categoryName,Price,description,processing,stock,photo}=sport;
+    
     return (
         <div>
       
