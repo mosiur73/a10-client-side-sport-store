@@ -37,22 +37,23 @@ const router=createBrowserRouter([
             {
                 path:"/allequipment",
                 element:<AllEquipment></AllEquipment>,
-                loader:()=>fetch('http://localhost:5000/sports')
+                loader:()=>fetch('https://assignment10-lotus-server.vercel.app/sports')
             },
             {
                 path:"/update/:id",
                 element:<PrivateRoute><UpdateEuipment></UpdateEuipment></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/sports/${params.id}`)
+                loader:({params})=>fetch(`https://assignment10-lotus-server.vercel.app/sports/${params.id}`)
             },
             {
                 path:"/myequipment",
                 element:<PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>,
-                loader:()=>fetch('http://localhost:5000/sports')
+                loader:()=>fetch('https://assignment10-lotus-server.vercel.app/sports')
+                
             },
             {
                 path:"/details/:id",
                 element:<PrivateRoute><Details></Details></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/sports/${params.id}`)
+                loader:({params})=>fetch(`https://assignment10-lotus-server.vercel.app/sports/${params.id}`)
                     
                 
             }

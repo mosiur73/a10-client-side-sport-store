@@ -23,7 +23,7 @@ const MyEquipment = () => {
      }).then((result) => {
        if (result.isConfirmed) {
        
-       fetch(`http://localhost:5000/sports/${id}`,{
+       fetch(`https://assignment10-lotus-server.vercel.app/sports/${id}`,{
            method:'DELETE'
        })
        .then(res =>res.json())

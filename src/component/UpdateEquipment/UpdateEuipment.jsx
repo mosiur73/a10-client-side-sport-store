@@ -22,7 +22,7 @@ const UpdateEuipment = () => {
         const sports={name,email,itemName,categoryName,Price,description,processing,stock,photo};
         // console.log(sports)
         //send data to the server
-        fetch(`http://localhost:5000/sports/${_id}`,{
+        fetch(`https://assignment10-lotus-server.vercel.app/sports/${_id}`,{
            method:'PUT',
            headers:{
             'content-type':'application/json'

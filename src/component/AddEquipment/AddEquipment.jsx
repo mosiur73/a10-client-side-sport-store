@@ -20,7 +20,7 @@ const AddEquipment = () => {
         const sports={name,email,itemName,categoryName,Price,description,processing,stock,photo};
         // console.log(sports)
         //send data to the server
-        fetch('http://localhost:5000/sports',{
+        fetch('https://assignment10-lotus-server.vercel.app/sports',{
            method:'POST',
            headers:{
             'content-type':'application/json'

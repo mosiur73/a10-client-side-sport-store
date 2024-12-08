@@ -10,7 +10,7 @@ const SportCategory = () => {
         // Fetch data from the API
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:5000/sports');
+                const response = await fetch('https://assignment10-lotus-server.vercel.app/sports');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
