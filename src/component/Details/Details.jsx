@@ -19,17 +19,17 @@ const Details = () => {
     } = singleData;
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-yellow-400 via-red-400 to-pink-500 p-6">
+        <div className="flex justify-center items-center min-h-screen bg-gradient-to-r bg-slate-100">
            <Zoom>
-           <div className="w-full max-w-sm bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="rounded-t-lg overflow-hidden">
+           <div className=" w-full max-w-sm bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className=" rounded-t-lg overflow-hidden">
                     <img
                         src={photo}
                         alt={itemName}
                         className="w-full h-48 object-cover"
                     />
                 </div>
-                <div className="p-6">
+                <div className="p-6 ">
                     <h2 className="text-xl font-bold text-gray-800 mb-2">{itemName}</h2>
                     <p className="text-sm text-gray-600 mb-1">
                         <span className="font-semibold">Category:</span> {categoryName}

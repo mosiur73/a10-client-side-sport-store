@@ -41,7 +41,7 @@ const AddEquipment = () => {
         })
     }
     return (
-        <div className='my-6 '>
+        <div className='' >
              <div className='lg:w-3/4 mx-auto'>
             <div className="text-center p-10">
                 <h1 className="text-5xl font-bold">Add Equipment</h1>

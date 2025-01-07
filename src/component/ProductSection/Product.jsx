@@ -9,7 +9,7 @@ const Product = ({product}) => {
     return (
         <div>
            <Zoom>
-           <div className="card card-compact bg-base-100 w-96 shadow-xl">
+           <div className="card card-compact bg-base-100 w-64 h-96 shadow-xl">
   <figure>
     <img
       src={photo}

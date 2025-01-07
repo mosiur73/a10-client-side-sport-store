@@ -8,6 +8,7 @@ const AllEquipment = () => {
     const [sortOrder, setSortOrder] = useState('asc'); 
 
 
+
     const handleDelete=id=>{
       
         Swal.fire({
@@ -51,7 +52,7 @@ const AllEquipment = () => {
           }
       });
       setSports(sortedSports);
-      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc'); // Toggle sort order
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
   };
 
     
@@ -63,44 +64,32 @@ const AllEquipment = () => {
                 </button>
             </div>
 
-            <div>
-            <div className="overflow-x-auto">
-  <table className="table">
-    {/* head */}
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Category</th>
-        <th>price</th>
-        <th>stock</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      {/* row 1 */}
-      {
-        sports.map((sport,index) =>
-         <tr key={sport._id}>
-            <th>{index + 1}</th>
-            <td>{sport.name}</td>
-            <td>{sport.categoryName}</td>
-            <td>{sport.Price}</td>
-            <td>{sport.stock}</td>
-            <td>
-               <Link to={`/details/${sport._id}`}> <button className='btn btn-secondary mr-2'>Details</button></Link>
-                <Link to={`/update/${sport._id}`}>
-                <button className='btn btn-info mr-2'>Edit</button>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
+            {
+        sports.map((sport) =>
+           <div key={sport._id} className="card card-compact bg-base-100 w-64 h-96 shadow-xl">
+            <figure>
+              <img
+                src={sport.photo}
+                alt="" />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{sport.name}</h2>
+              <p>{sport.categoryName}</p>
+              <p>${sport.Price}</p>
+              <p>Stock Status:{sport.stock}</p>
+              <div className="card-actions justify-around">
+              
+               <Link to={`/details/${sport._id}`}> <button className='btn btn-secondary mr-2'>view</button></Link>
+                 <Link to={`/update/${sport._id}`}>
+                 <button className='btn btn-info mr-2'>Edit</button>
                 </Link>
                 <button onClick={()=>handleDelete(sport._id)}  className='btn btn-warning'>Del</button>
-            </td>
-          </tr>
-         )
-      }
-     
-    </tbody>
-  </table>
-</div>
+            
+              </div>
+            </div>
+          </div>
+        )}
             </div>
             
         </div>

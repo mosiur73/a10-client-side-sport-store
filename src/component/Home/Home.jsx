@@ -7,7 +7,7 @@ import ForthSection from '../ExtraSection/ForthSection';
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
             <Slider></Slider>
             <SportCategory></SportCategory>
             <ProductSection></ProductSection>

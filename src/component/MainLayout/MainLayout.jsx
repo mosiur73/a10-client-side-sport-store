@@ -5,9 +5,11 @@ import Footer from '../Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div className='max-w-7xl mx-auto'>
-           <Navbar></Navbar>
-           <main style={{ padding: '1rem' }}>
+        <div className='max-w-screen-2xl mx-auto'>
+          <div className=''>
+          <Navbar></Navbar>
+          </div>
+           <main className='mt-24  lg:ml-10' style={{ padding: '1rem' }}>
                 
            <Outlet></Outlet>
             </main>

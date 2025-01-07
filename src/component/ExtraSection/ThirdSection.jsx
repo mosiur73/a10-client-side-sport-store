@@ -24,11 +24,7 @@ const ThirdSection = () => {
              </p>
              </Zoom>
            
-             <div className=' mt-4'>
-                <button className='btn btn-warning rounded-full mr-5'>Buy Now</button>
-                <button className='btn rounded-full'>To Shop</button>
-             </div>
-            
+             
              </div>
             </div>
         </div>

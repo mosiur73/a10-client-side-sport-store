@@ -50,15 +50,15 @@ const MyEquipment = () => {
   const userProducts = productCart?.filter(product => product.email === user?.email) || [];
 
   return (
-    <div>
+    <div className='mt-10'>
      
       <div>
         {userProducts.length > 0 ? (
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
            <Zoom>
            {userProducts.map(product => (
             //   <Card key={product._id} product={product} />
-            <div key={product._id} className="card bg-base-100 w-96 shadow-xl">
+            <div key={product._id} className="card bg-base-100 w-72 h-80 shadow-xl">
             <figure>
               <img
                 src={product.photo}

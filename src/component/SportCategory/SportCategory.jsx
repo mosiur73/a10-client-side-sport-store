@@ -44,7 +44,7 @@ const SportCategory = () => {
                                 <h3 className='text-2xl text-center text-indigo-800 font-bold'>{product.categoryName}</h3>
 
                               </div>  */}
-                            <div className="card bg-base-100 image-full w-72 shadow-xl ">
+                            <div className="card bg-base-100 image-full w-72 h-60 shadow-xl ">
                                 <figure>
                                     <img
                                         className=''

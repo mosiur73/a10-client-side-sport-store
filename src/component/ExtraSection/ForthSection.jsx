@@ -27,7 +27,7 @@ const ForthSection = () => {
   </div>
 </div>
          </Fade>
-<Flip>
+
 <div className="card card-side bg-base-100 shadow-xl">
   <figure>
     <img
@@ -43,7 +43,7 @@ const ForthSection = () => {
     <button className='btn'>view more <FaArrowRight /></button>
   </div>
 </div>
-</Flip>
+
 
 
             </div>
