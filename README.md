@@ -7,9 +7,8 @@ An online sports store offering high-quality equipment and accessories for vario
 ## 🛠 Technologies Used  
 - **React.js**  
 - **Firebase**  
-- **Axios**  
 - **Swiper.js**  
-- **Cookies**  
+
 
 ## ✨ Features  
 - **Wide Range of Products:** Explore premium sports gear for basketball, soccer, tennis, and more.  
